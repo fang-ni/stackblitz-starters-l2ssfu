@@ -1,0 +1,31 @@
+<div class="time-list-container">
+    <span class="time-highlight">
+    </span>
+    <div class="time-list-wrapper state-focused">
+        <span class="title">hour: {{hhValue}}
+        </span>
+        <div class="time-list">
+            <div #hContainer class="time-container content scrollable" (scroll)="handleHHScroll($event)">
+                <ul class="reset">
+                    <li class="item" (click)="scrollTo(i, $event, 'hh')" *ngFor="let item of hhArray; let i = index;">
+                        <span>{{item}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="time-separator">:</div>
+    <div class="time-list-wrapper state-focused">
+        <span class="title">minute: {{mmValue}}
+        </span>
+        <div class="time-list">
+            <div #mContainer class="time-container content scrollable" (scroll)="handleMMScroll($event)">
+                <ul class="reset">
+                    <li class="item" (click)="scrollTo(i, $event, 'mm')" *ngFor="let item of mmArray; let i = index;">
+                        <span>{{item}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
